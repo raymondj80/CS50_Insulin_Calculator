@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Foods
+{% endblock %}
+
+{% block main %}
+    <form action="/addfoods" method="post">
+        <div class="form__group">
+            <input name="food" type="text" placeholder="Food Name" class="form__input" />
+        </div>
+        <div class="form__group">
+            <input name="carbs" type="number" step=0.01 placeholder="Carb Content" class="form__input" />
+        </div>
+        <button class="btn" type="submit">Submit</button>
+    </form>
+    <div class="form_text">
+        <footer>
+            <p>
+                *To add in a new food to our database, enter in your food, and the carbohydrate content of the food (up to two decimal points).
+            </p>
+        </footer>
+
+    </div>
+    <div class="alert alert-info" id="add_food" style="display: none">
+        <strong>Success!</strong> You have added {{ food_item|safe }} to the database.
+    </div>
+    <div class="alert alert-warning" id="warning" style="display: none">
+        <strong>Warning!</strong> {{food_item|safe }} already exists
+    </div>
+
+    <script>
+        function food_added(food,food_exists)
+        {
+
+            if (food != null) {
+                message = food_exists;
+                if (food_exists === 'True')
+                {
+                    var x = document.getElementById("warning");
+                }
+                else
+                {
+                    var x = document.getElementById("add_food");
+                }
+
+                x.style.display = "block";
+            }
+        }
+
+        food_added( {{ food_item|safe }}, {{ food_exists|safe }} );
+
+    </script>
+
+
+{% endblock %}

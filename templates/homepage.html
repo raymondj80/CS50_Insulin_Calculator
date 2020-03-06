@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h5>
+        Click on the navigation bar to test the insulin calculator functionalities!
+    </h5>
+    <div class="alert alert-success" id="login-success" style="display: none">
+      <strong>Success!</strong> You have logged in!
+    </div>
+
+    <script type="text/javascript">
+        function login_success(if_login)
+        {
+
+            if (if_login != null) {
+                message = if_login;
+
+                switch(message)
+                {
+                    case 'login':
+                        var x = document.getElementById("login-success");
+
+                }
+                x.style.display = "block";
+
+            }
+        }
+
+        login_success( {{ msg|safe }} );
+
+    </script>
+
+{% endblock %}

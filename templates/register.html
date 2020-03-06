@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+
+        <div class="form__group">
+            <input name="username" type="text" placeholder="Username" class="form__input" />
+        </div>
+
+        <div class="form__group">
+            <input name="weight" type="number" placeholder="Weight" class="form__input" />
+        </div>
+
+        <div class="form__group">
+            <input name="password" type="password" placeholder="Password" class="form__input" />
+        </div>
+
+        <div class="form__group">
+            <input name="confirmation" type="password" placeholder="Password Confirmation" class="form__input" />
+        </div>
+
+        <button class="btn" type="submit">Register</button>
+    </form>
+    <div class="form_text">
+        <footer>
+            <p>
+                *Your password must have at least 8 characters, one must be uppercase, and one must be a digit.
+            </p>
+            <p>
+                *Then, type in your weight, rounded to the nearest integer.
+            </p>
+        </footer>
+    </div>
+
+</div>
+{% endblock %}

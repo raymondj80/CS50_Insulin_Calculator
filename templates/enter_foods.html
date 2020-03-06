@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Enter Foods
+{% endblock %}
+
+{% block main %}
+    <form action="/enter_foods" method="post">
+        <ul id="ul_food_input" style="list-style-type: none">
+            <li>
+                <input class="form__input" style="float: left;" name="food_item_0" placeholder="Food Item" type="text">
+                <input class="form__input" style="float: right;" name="serving_0" placeholder="Servings" type="number">
+            </li>
+        </ul>
+
+        <ul id="ul_food_input" style="list-style-type: none">
+            <li>
+                <input class="form__input"  style="float: left;" name="target_bl" placeholder="Target Pre-meal Blood Glucose (mg/dL)" type="text">
+                <input class="form__input" style="float: right;" name="current_bl" placeholder="Current Blood Glucose (mg/dL)" type="text">
+            </li>
+        </ul>
+
+        <div class="form-group">
+            <select class="form-control" name="meal" required>
+                <option disabled selected value>Meal</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+            </select>
+        </div>
+
+        <div class="form__group" id=add>
+            <button type="button" class="btn" onclick="add_item()">Add</button>
+        </div>
+
+        <button class="btn" type="submit">Submit</button>
+
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        let form_id = 1;
+        function add_item() {
+            document.getElementById("ul_food_input").innerHTML +=  '<li><input class="form__input" style="float: left;" name="food_item_' + form_id.toString() + '" placeholder="Food Item" type="text"><input class="form__input" style="float: right;" name="serving_' + form_id.toString() + '"placeholder="Servings" type="number"></li>';
+            form_id += 1;
+        }
+    </script>
+
+{% endblock %}

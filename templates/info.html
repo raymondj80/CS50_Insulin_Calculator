@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    How to Use the Calculator
+{% endblock %}
+
+{% block main %}
+    <ul class="tilesWrap">
+    	<li>
+    		<h2>01</h2>
+    		<h3>Step 1</h3>
+    		<p>
+    			Register for an account! Create a username/password, and enter your weight. This account will allow you to track your insulin progress.
+    		</p>
+    		<button><a href="/register">Click here!</a></button>
+    	</li>
+    	<li>
+    		<h2>02</h2>
+    		<h3>Step 2</h3>
+    		<p>
+    			Use the food input tab to enter in your daily food. Choose from a variety of pre-set foods that have nutrition facts pre-incorporated into our database. Calculate the insulin required based on your food input, using the calculate tab. We utilized formulas from UCSF to generate accurate results, although please consult with your medical provider.
+    		</p>
+    		<button><a href="/enter_foods">Click here!</a></button>
+    	</li>
+    	<li>
+    		<h2>03</h2>
+    		<h3>Step 3</h3>
+    		<p>
+    			Utilize our resources tab to find out more about your type of diabetes, or use the food search tab to search our database for foods and their carbohydrate contents.
+    		</p>
+    		<button><a href="/resources">Click here!</a></button>
+    	</li>
+    	<li>
+    		<h2>04</h2>
+    		<h3>Step 4</h3>
+    		<p>
+    			Using our history tab, you can track a log of your daily dietary habits. You'll be able to see what you've eaten, when you've eaten it, and how much of it you've eaten.
+    		</p>
+    		<button><a href="/history">Click here!</a></button>
+    	</li>
+
+    </ul>
+{% endblock %}
+

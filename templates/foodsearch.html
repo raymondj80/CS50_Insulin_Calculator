@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Database food search
+{% endblock %}
+
+{% block main %}
+    <form class="form__group" action="/foodsearch" method="POST">
+        <input class="form__input" name="food" placeholder="Type food" type="text"/>
+        <button class="btn" type="submit">Submit</button>
+    </form>
+{% endblock %}

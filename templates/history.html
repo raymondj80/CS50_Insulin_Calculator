@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table style="width:100%" border=2>
+        <tr>
+            <th>Food</th>
+            <th>Servings</th>
+            <th>Insulin Dosage</th>
+            <th>Meal</th>
+            <th>Date</th>
+        </tr>
+        {% for history in histories %}
+        <tr>
+            <td>{{history.food}}</td>
+            <td>{{history.servings}}</td>
+            <td>{{history.dosage}}</td>
+            <td>{{history.meal}}</td>
+            <td>{{history.date}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Database food search
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>
+                Food
+            </th>
+            <th>
+                Carbs
+            </th>
+        </tr>
+        {% for fooditem in food %}
+        <tr>
+            <div class="tablefood">
+                <td>{{fooditem.Short_Name}}</td>
+            </div>
+            <div class="tablecarbs">
+                <td>{{fooditem.Carbs}}</td>
+            </div>
+
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
